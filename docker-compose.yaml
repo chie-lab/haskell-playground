@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    container_name: haskell
+    hostname: haskell
+    tty: true
+    stdin_open: true
+    volumes:
+      - type: bind
+        source: "./src"
+        target: "/src"
